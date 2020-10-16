@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.btnCalcular = new System.Windows.Forms.Button();
             this.menuPrincipal = new System.Windows.Forms.MenuStrip();
             this.iMenuAcuerdo = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,17 +42,29 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.mncCalendario = new System.Windows.Forms.MonthCalendar();
             this.grbEstancias = new System.Windows.Forms.GroupBox();
-            this.rdbDormir = new System.Windows.Forms.RadioButton();
-            this.rdbMediaPension = new System.Windows.Forms.RadioButton();
             this.rdbPensionCompleta = new System.Windows.Forms.RadioButton();
+            this.rdbMediaPension = new System.Windows.Forms.RadioButton();
+            this.rdbDormir = new System.Windows.Forms.RadioButton();
             this.nudPersonas = new System.Windows.Forms.NumericUpDown();
             this.lblPersonas = new System.Windows.Forms.Label();
             this.nudHotel = new System.Windows.Forms.NumericUpDown();
             this.lblHotel = new System.Windows.Forms.Label();
+            this.pnlValidar = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblPrecio = new System.Windows.Forms.Label();
+            this.btnValidar = new System.Windows.Forms.Button();
+            this.pnlBajo = new System.Windows.Forms.Panel();
+            this.lLblMail = new System.Windows.Forms.LinkLabel();
+            this.pgbCarga = new System.Windows.Forms.ProgressBar();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.timHoraActual = new System.Windows.Forms.Timer(this.components);
+            this.imgDestinos = new System.Windows.Forms.ImageList(this.components);
             this.menuPrincipal.SuspendLayout();
             this.grbEstancias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPersonas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHotel)).BeginInit();
+            this.pnlValidar.SuspendLayout();
+            this.pnlBajo.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCalcular
@@ -72,7 +86,7 @@
             this.iMenuSalir});
             this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuPrincipal.Name = "menuPrincipal";
-            this.menuPrincipal.Size = new System.Drawing.Size(1003, 24);
+            this.menuPrincipal.Size = new System.Drawing.Size(877, 24);
             this.menuPrincipal.TabIndex = 1;
             this.menuPrincipal.Text = "menuStrip1";
             // 
@@ -172,16 +186,16 @@
             this.grbEstancias.TabStop = false;
             this.grbEstancias.Text = "Tipo de Estancia";
             // 
-            // rdbDormir
+            // rdbPensionCompleta
             // 
-            this.rdbDormir.AutoSize = true;
-            this.rdbDormir.Location = new System.Drawing.Point(7, 20);
-            this.rdbDormir.Name = "rdbDormir";
-            this.rdbDormir.Size = new System.Drawing.Size(90, 17);
-            this.rdbDormir.TabIndex = 0;
-            this.rdbDormir.TabStop = true;
-            this.rdbDormir.Text = "Solo Dormir";
-            this.rdbDormir.UseVisualStyleBackColor = true;
+            this.rdbPensionCompleta.AutoSize = true;
+            this.rdbPensionCompleta.Location = new System.Drawing.Point(7, 68);
+            this.rdbPensionCompleta.Name = "rdbPensionCompleta";
+            this.rdbPensionCompleta.Size = new System.Drawing.Size(126, 17);
+            this.rdbPensionCompleta.TabIndex = 2;
+            this.rdbPensionCompleta.TabStop = true;
+            this.rdbPensionCompleta.Text = "Pensión Completa";
+            this.rdbPensionCompleta.UseVisualStyleBackColor = true;
             // 
             // rdbMediaPension
             // 
@@ -194,16 +208,16 @@
             this.rdbMediaPension.Text = "Media Pensión";
             this.rdbMediaPension.UseVisualStyleBackColor = true;
             // 
-            // rdbPensionCompleta
+            // rdbDormir
             // 
-            this.rdbPensionCompleta.AutoSize = true;
-            this.rdbPensionCompleta.Location = new System.Drawing.Point(7, 68);
-            this.rdbPensionCompleta.Name = "rdbPensionCompleta";
-            this.rdbPensionCompleta.Size = new System.Drawing.Size(126, 17);
-            this.rdbPensionCompleta.TabIndex = 2;
-            this.rdbPensionCompleta.TabStop = true;
-            this.rdbPensionCompleta.Text = "Pensión Completa";
-            this.rdbPensionCompleta.UseVisualStyleBackColor = true;
+            this.rdbDormir.AutoSize = true;
+            this.rdbDormir.Location = new System.Drawing.Point(7, 20);
+            this.rdbDormir.Name = "rdbDormir";
+            this.rdbDormir.Size = new System.Drawing.Size(90, 17);
+            this.rdbDormir.TabIndex = 0;
+            this.rdbDormir.TabStop = true;
+            this.rdbDormir.Text = "Solo Dormir";
+            this.rdbDormir.UseVisualStyleBackColor = true;
             // 
             // nudPersonas
             // 
@@ -243,11 +257,98 @@
             this.lblHotel.TabIndex = 12;
             this.lblHotel.Text = "Estrellas del hotel";
             // 
+            // pnlValidar
+            // 
+            this.pnlValidar.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.pnlValidar.Controls.Add(this.btnValidar);
+            this.pnlValidar.Controls.Add(this.lblPrecio);
+            this.pnlValidar.Controls.Add(this.textBox1);
+            this.pnlValidar.Location = new System.Drawing.Point(334, 410);
+            this.pnlValidar.Name = "pnlValidar";
+            this.pnlValidar.Size = new System.Drawing.Size(506, 252);
+            this.pnlValidar.TabIndex = 13;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(16, 14);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(476, 180);
+            this.textBox1.TabIndex = 0;
+            // 
+            // lblPrecio
+            // 
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecio.Location = new System.Drawing.Point(16, 211);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(25, 13);
+            this.lblPrecio.TabIndex = 1;
+            this.lblPrecio.Text = "0 €";
+            // 
+            // btnValidar
+            // 
+            this.btnValidar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValidar.Location = new System.Drawing.Point(416, 211);
+            this.btnValidar.Name = "btnValidar";
+            this.btnValidar.Size = new System.Drawing.Size(75, 23);
+            this.btnValidar.TabIndex = 2;
+            this.btnValidar.Text = "VALIDAR";
+            this.btnValidar.UseVisualStyleBackColor = true;
+            // 
+            // pnlBajo
+            // 
+            this.pnlBajo.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pnlBajo.Controls.Add(this.lblHora);
+            this.pnlBajo.Controls.Add(this.pgbCarga);
+            this.pnlBajo.Controls.Add(this.lLblMail);
+            this.pnlBajo.Location = new System.Drawing.Point(0, 733);
+            this.pnlBajo.Name = "pnlBajo";
+            this.pnlBajo.Size = new System.Drawing.Size(877, 27);
+            this.pnlBajo.TabIndex = 14;
+            // 
+            // lLblMail
+            // 
+            this.lLblMail.AutoSize = true;
+            this.lLblMail.Location = new System.Drawing.Point(41, 8);
+            this.lLblMail.Name = "lLblMail";
+            this.lLblMail.Size = new System.Drawing.Size(125, 13);
+            this.lLblMail.TabIndex = 0;
+            this.lLblMail.TabStop = true;
+            this.lLblMail.Text = "vielcontravel@gmail.com";
+            // 
+            // pgbCarga
+            // 
+            this.pgbCarga.Location = new System.Drawing.Point(173, 3);
+            this.pgbCarga.Name = "pgbCarga";
+            this.pgbCarga.Size = new System.Drawing.Size(292, 21);
+            this.pgbCarga.TabIndex = 1;
+            // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.Location = new System.Drawing.Point(681, 8);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(35, 13);
+            this.lblHora.TabIndex = 2;
+            this.lblHora.Text = "label1";
+            // 
+            // imgDestinos
+            // 
+            this.imgDestinos.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgDestinos.ImageStream")));
+            this.imgDestinos.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgDestinos.Images.SetKeyName(0, "ciudad.jpg");
+            this.imgDestinos.Images.SetKeyName(1, "playa.jpg");
+            this.imgDestinos.Images.SetKeyName(2, "montaña.jpg");
+            this.imgDestinos.Images.SetKeyName(3, "tour.jpg");
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1003, 760);
+            this.ClientSize = new System.Drawing.Size(877, 760);
+            this.Controls.Add(this.pnlBajo);
+            this.Controls.Add(this.pnlValidar);
             this.Controls.Add(this.lblHotel);
             this.Controls.Add(this.nudHotel);
             this.Controls.Add(this.lblPersonas);
@@ -270,6 +371,10 @@
             this.grbEstancias.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPersonas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHotel)).EndInit();
+            this.pnlValidar.ResumeLayout(false);
+            this.pnlValidar.PerformLayout();
+            this.pnlBajo.ResumeLayout(false);
+            this.pnlBajo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,6 +401,16 @@
         private System.Windows.Forms.Label lblPersonas;
         private System.Windows.Forms.NumericUpDown nudHotel;
         private System.Windows.Forms.Label lblHotel;
+        private System.Windows.Forms.Panel pnlValidar;
+        private System.Windows.Forms.Button btnValidar;
+        private System.Windows.Forms.Label lblPrecio;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel pnlBajo;
+        private System.Windows.Forms.Label lblHora;
+        private System.Windows.Forms.ProgressBar pgbCarga;
+        private System.Windows.Forms.LinkLabel lLblMail;
+        private System.Windows.Forms.Timer timHoraActual;
+        private System.Windows.Forms.ImageList imgDestinos;
     }
 }
 
