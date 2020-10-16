@@ -59,12 +59,14 @@
             this.lblHora = new System.Windows.Forms.Label();
             this.timHoraActual = new System.Windows.Forms.Timer(this.components);
             this.imgDestinos = new System.Windows.Forms.ImageList(this.components);
+            this.pcbLogo = new System.Windows.Forms.PictureBox();
             this.menuPrincipal.SuspendLayout();
             this.grbEstancias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPersonas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHotel)).BeginInit();
             this.pnlValidar.SuspendLayout();
             this.pnlBajo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCalcular
@@ -342,11 +344,23 @@
             this.imgDestinos.Images.SetKeyName(2, "montaña.jpg");
             this.imgDestinos.Images.SetKeyName(3, "tour.jpg");
             // 
+            // pcbLogo
+            // 
+            this.pcbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pcbLogo.Image")));
+            this.pcbLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("pcbLogo.InitialImage")));
+            this.pcbLogo.Location = new System.Drawing.Point(0, 457);
+            this.pcbLogo.Name = "pcbLogo";
+            this.pcbLogo.Size = new System.Drawing.Size(328, 270);
+            this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbLogo.TabIndex = 15;
+            this.pcbLogo.TabStop = false;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 760);
+            this.Controls.Add(this.pcbLogo);
             this.Controls.Add(this.pnlBajo);
             this.Controls.Add(this.pnlValidar);
             this.Controls.Add(this.lblHotel);
@@ -364,7 +378,9 @@
             this.Controls.Add(this.menuPrincipal);
             this.MainMenuStrip = this.menuPrincipal;
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agencia de Viajes CIFPVG Diego";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.menuPrincipal.ResumeLayout(false);
             this.menuPrincipal.PerformLayout();
             this.grbEstancias.ResumeLayout(false);
@@ -375,6 +391,7 @@
             this.pnlValidar.PerformLayout();
             this.pnlBajo.ResumeLayout(false);
             this.pnlBajo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -411,6 +428,7 @@
         private System.Windows.Forms.LinkLabel lLblMail;
         private System.Windows.Forms.Timer timHoraActual;
         private System.Windows.Forms.ImageList imgDestinos;
+        private System.Windows.Forms.PictureBox pcbLogo;
     }
 }
 
