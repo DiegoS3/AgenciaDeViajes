@@ -55,27 +55,31 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.timHoraActual = new System.Windows.Forms.Timer(this.components);
             this.imgDestinos = new System.Windows.Forms.ImageList(this.components);
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.stsMain = new System.Windows.Forms.StatusStrip();
             this.lblMail = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.lblHora = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.pbDestinos = new System.Windows.Forms.PictureBox();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.tlsMain = new System.Windows.Forms.ToolStrip();
+            this.tlsBtnAcuerdo = new System.Windows.Forms.ToolStripButton();
+            this.tlsBtnPrecios = new System.Windows.Forms.ToolStripButton();
+            this.tlsBtnSalir = new System.Windows.Forms.ToolStripButton();
             this.menuPrincipal.SuspendLayout();
             this.grbEstancias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPersonas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHotel)).BeginInit();
             this.pnlValidar.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.stsMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDestinos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            this.tlsMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCalcular
             // 
             this.btnCalcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalcular.Location = new System.Drawing.Point(88, 410);
+            this.btnCalcular.Location = new System.Drawing.Point(117, 455);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(95, 26);
             this.btnCalcular.TabIndex = 0;
@@ -122,7 +126,7 @@
             "Playa",
             "Montaña",
             "Tour"});
-            this.lsbDestinos.Location = new System.Drawing.Point(331, 77);
+            this.lsbDestinos.Location = new System.Drawing.Point(343, 108);
             this.lsbDestinos.Name = "lsbDestinos";
             this.lsbDestinos.Size = new System.Drawing.Size(167, 95);
             this.lsbDestinos.TabIndex = 2;
@@ -131,7 +135,7 @@
             // 
             this.lblDestinos.AutoSize = true;
             this.lblDestinos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDestinos.Location = new System.Drawing.Point(331, 58);
+            this.lblDestinos.Location = new System.Drawing.Point(343, 89);
             this.lblDestinos.Name = "lblDestinos";
             this.lblDestinos.Size = new System.Drawing.Size(98, 13);
             this.lblDestinos.TabIndex = 3;
@@ -147,7 +151,7 @@
             "Lavandería",
             "NaturAventura",
             "Spa"});
-            this.clbActividades.Location = new System.Drawing.Point(638, 77);
+            this.clbActividades.Location = new System.Drawing.Point(650, 108);
             this.clbActividades.Name = "clbActividades";
             this.clbActividades.Size = new System.Drawing.Size(202, 94);
             this.clbActividades.TabIndex = 4;
@@ -156,7 +160,7 @@
             // 
             this.lblActividades.AutoSize = true;
             this.lblActividades.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActividades.Location = new System.Drawing.Point(635, 58);
+            this.lblActividades.Location = new System.Drawing.Point(647, 89);
             this.lblActividades.Name = "lblActividades";
             this.lblActividades.Size = new System.Drawing.Size(106, 13);
             this.lblActividades.TabIndex = 5;
@@ -166,7 +170,7 @@
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(331, 201);
+            this.lblFecha.Location = new System.Drawing.Point(343, 232);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(42, 13);
             this.lblFecha.TabIndex = 6;
@@ -174,7 +178,7 @@
             // 
             // mncCalendario
             // 
-            this.mncCalendario.Location = new System.Drawing.Point(334, 228);
+            this.mncCalendario.Location = new System.Drawing.Point(346, 259);
             this.mncCalendario.Name = "mncCalendario";
             this.mncCalendario.TabIndex = 7;
             // 
@@ -184,9 +188,9 @@
             this.grbEstancias.Controls.Add(this.rdbMediaPension);
             this.grbEstancias.Controls.Add(this.rdbDormir);
             this.grbEstancias.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbEstancias.Location = new System.Drawing.Point(37, 290);
+            this.grbEstancias.Location = new System.Drawing.Point(79, 324);
             this.grbEstancias.Name = "grbEstancias";
-            this.grbEstancias.Size = new System.Drawing.Size(200, 100);
+            this.grbEstancias.Size = new System.Drawing.Size(164, 122);
             this.grbEstancias.TabIndex = 8;
             this.grbEstancias.TabStop = false;
             this.grbEstancias.Text = "Tipo de Estancia";
@@ -194,7 +198,7 @@
             // rdbPensionCompleta
             // 
             this.rdbPensionCompleta.AutoSize = true;
-            this.rdbPensionCompleta.Location = new System.Drawing.Point(7, 68);
+            this.rdbPensionCompleta.Location = new System.Drawing.Point(25, 76);
             this.rdbPensionCompleta.Name = "rdbPensionCompleta";
             this.rdbPensionCompleta.Size = new System.Drawing.Size(126, 17);
             this.rdbPensionCompleta.TabIndex = 2;
@@ -205,7 +209,7 @@
             // rdbMediaPension
             // 
             this.rdbMediaPension.AutoSize = true;
-            this.rdbMediaPension.Location = new System.Drawing.Point(7, 44);
+            this.rdbMediaPension.Location = new System.Drawing.Point(25, 52);
             this.rdbMediaPension.Name = "rdbMediaPension";
             this.rdbMediaPension.Size = new System.Drawing.Size(108, 17);
             this.rdbMediaPension.TabIndex = 1;
@@ -216,7 +220,7 @@
             // rdbDormir
             // 
             this.rdbDormir.AutoSize = true;
-            this.rdbDormir.Location = new System.Drawing.Point(7, 20);
+            this.rdbDormir.Location = new System.Drawing.Point(25, 28);
             this.rdbDormir.Name = "rdbDormir";
             this.rdbDormir.Size = new System.Drawing.Size(90, 17);
             this.rdbDormir.TabIndex = 0;
@@ -227,7 +231,7 @@
             // nudPersonas
             // 
             this.nudPersonas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudPersonas.Location = new System.Drawing.Point(638, 257);
+            this.nudPersonas.Location = new System.Drawing.Point(650, 288);
             this.nudPersonas.Name = "nudPersonas";
             this.nudPersonas.Size = new System.Drawing.Size(75, 20);
             this.nudPersonas.TabIndex = 9;
@@ -237,7 +241,7 @@
             // 
             this.lblPersonas.AutoSize = true;
             this.lblPersonas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPersonas.Location = new System.Drawing.Point(732, 259);
+            this.lblPersonas.Location = new System.Drawing.Point(744, 290);
             this.lblPersonas.Name = "lblPersonas";
             this.lblPersonas.Size = new System.Drawing.Size(59, 13);
             this.lblPersonas.TabIndex = 10;
@@ -246,7 +250,7 @@
             // nudHotel
             // 
             this.nudHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudHotel.Location = new System.Drawing.Point(638, 323);
+            this.nudHotel.Location = new System.Drawing.Point(650, 354);
             this.nudHotel.Name = "nudHotel";
             this.nudHotel.Size = new System.Drawing.Size(75, 20);
             this.nudHotel.TabIndex = 11;
@@ -256,7 +260,7 @@
             // 
             this.lblHotel.AutoSize = true;
             this.lblHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHotel.Location = new System.Drawing.Point(732, 323);
+            this.lblHotel.Location = new System.Drawing.Point(744, 354);
             this.lblHotel.Name = "lblHotel";
             this.lblHotel.Size = new System.Drawing.Size(108, 13);
             this.lblHotel.TabIndex = 12;
@@ -268,7 +272,7 @@
             this.pnlValidar.Controls.Add(this.btnValidar);
             this.pnlValidar.Controls.Add(this.lblPrecio);
             this.pnlValidar.Controls.Add(this.textBox1);
-            this.pnlValidar.Location = new System.Drawing.Point(334, 410);
+            this.pnlValidar.Location = new System.Drawing.Point(346, 441);
             this.pnlValidar.Name = "pnlValidar";
             this.pnlValidar.Size = new System.Drawing.Size(506, 252);
             this.pnlValidar.TabIndex = 13;
@@ -310,23 +314,25 @@
             this.imgDestinos.Images.SetKeyName(2, "montaña.jpg");
             this.imgDestinos.Images.SetKeyName(3, "tour.jpg");
             // 
-            // statusStrip1
+            // stsMain
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblMail,
             this.toolStripProgressBar1,
             this.lblHora});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 738);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(877, 22);
-            this.statusStrip1.TabIndex = 14;
-            this.statusStrip1.Text = "statusStrip1";
+            this.stsMain.Location = new System.Drawing.Point(0, 738);
+            this.stsMain.Name = "stsMain";
+            this.stsMain.Size = new System.Drawing.Size(877, 22);
+            this.stsMain.TabIndex = 14;
+            this.stsMain.Text = "statusStrip1";
             // 
             // lblMail
             // 
+            this.lblMail.Image = ((System.Drawing.Image)(resources.GetObject("lblMail.Image")));
             this.lblMail.IsLink = true;
+            this.lblMail.Margin = new System.Windows.Forms.Padding(10, 3, 0, 2);
             this.lblMail.Name = "lblMail";
-            this.lblMail.Size = new System.Drawing.Size(142, 17);
+            this.lblMail.Size = new System.Drawing.Size(158, 17);
             this.lblMail.Text = "vielcontravel@gmail.com";
             // 
             // toolStripProgressBar1
@@ -337,57 +343,91 @@
             // 
             // lblHora
             // 
+            this.lblHora.Image = ((System.Drawing.Image)(resources.GetObject("lblHora.Image")));
             this.lblHora.Margin = new System.Windows.Forms.Padding(200, 3, 0, 2);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(118, 17);
+            this.lblHora.Size = new System.Drawing.Size(134, 17);
             this.lblHora.Text = "toolStripStatusLabel2";
             // 
-            // toolStrip1
+            // pbDestinos
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(877, 25);
-            this.toolStrip1.TabIndex = 15;
-            this.toolStrip1.Text = "toolStrip1";
+            this.pbDestinos.BackColor = System.Drawing.Color.Transparent;
+            this.pbDestinos.Location = new System.Drawing.Point(24, 89);
+            this.pbDestinos.Name = "pbDestinos";
+            this.pbDestinos.Size = new System.Drawing.Size(285, 219);
+            this.pbDestinos.TabIndex = 16;
+            this.pbDestinos.TabStop = false;
             // 
-            // toolStripButton1
+            // pbLogo
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
+            this.pbLogo.Location = new System.Drawing.Point(12, 511);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(319, 213);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogo.TabIndex = 17;
+            this.pbLogo.TabStop = false;
             // 
-            // toolStripButton2
+            // tlsMain
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
+            this.tlsMain.AutoSize = false;
+            this.tlsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tlsBtnAcuerdo,
+            this.tlsBtnPrecios,
+            this.tlsBtnSalir});
+            this.tlsMain.Location = new System.Drawing.Point(0, 24);
+            this.tlsMain.Name = "tlsMain";
+            this.tlsMain.Size = new System.Drawing.Size(877, 46);
+            this.tlsMain.TabIndex = 7;
+            this.tlsMain.Text = "toolStrip1";
             // 
-            // toolStripButton3
+            // tlsBtnAcuerdo
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton3.Text = "toolStripButton3";
+            this.tlsBtnAcuerdo.AutoSize = false;
+            this.tlsBtnAcuerdo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tlsBtnAcuerdo.Image = ((System.Drawing.Image)(resources.GetObject("tlsBtnAcuerdo.Image")));
+            this.tlsBtnAcuerdo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tlsBtnAcuerdo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tlsBtnAcuerdo.Margin = new System.Windows.Forms.Padding(10, 1, 0, 2);
+            this.tlsBtnAcuerdo.Name = "tlsBtnAcuerdo";
+            this.tlsBtnAcuerdo.Size = new System.Drawing.Size(40, 40);
+            this.tlsBtnAcuerdo.Text = "toolStripButton1";
+            this.tlsBtnAcuerdo.ToolTipText = "Acuerdo Empresa";
+            // 
+            // tlsBtnPrecios
+            // 
+            this.tlsBtnPrecios.AutoSize = false;
+            this.tlsBtnPrecios.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tlsBtnPrecios.Image = ((System.Drawing.Image)(resources.GetObject("tlsBtnPrecios.Image")));
+            this.tlsBtnPrecios.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tlsBtnPrecios.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tlsBtnPrecios.Margin = new System.Windows.Forms.Padding(20, 1, 0, 2);
+            this.tlsBtnPrecios.Name = "tlsBtnPrecios";
+            this.tlsBtnPrecios.Size = new System.Drawing.Size(40, 40);
+            this.tlsBtnPrecios.Text = "toolStripButton2";
+            this.tlsBtnPrecios.ToolTipText = "Precios";
+            // 
+            // tlsBtnSalir
+            // 
+            this.tlsBtnSalir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tlsBtnSalir.AutoSize = false;
+            this.tlsBtnSalir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tlsBtnSalir.Image = ((System.Drawing.Image)(resources.GetObject("tlsBtnSalir.Image")));
+            this.tlsBtnSalir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tlsBtnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tlsBtnSalir.Name = "tlsBtnSalir";
+            this.tlsBtnSalir.Size = new System.Drawing.Size(40, 40);
+            this.tlsBtnSalir.Text = "toolStripButton3";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 760);
-            this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.tlsMain);
+            this.Controls.Add(this.pbLogo);
+            this.Controls.Add(this.pbDestinos);
+            this.Controls.Add(this.stsMain);
             this.Controls.Add(this.pnlValidar);
             this.Controls.Add(this.lblHotel);
             this.Controls.Add(this.nudHotel);
@@ -415,10 +455,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudHotel)).EndInit();
             this.pnlValidar.ResumeLayout(false);
             this.pnlValidar.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.stsMain.ResumeLayout(false);
+            this.stsMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDestinos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            this.tlsMain.ResumeLayout(false);
+            this.tlsMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -451,14 +493,16 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Timer timHoraActual;
         private System.Windows.Forms.ImageList imgDestinos;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.StatusStrip stsMain;
         private System.Windows.Forms.ToolStripStatusLabel lblMail;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
         private System.Windows.Forms.ToolStripStatusLabel lblHora;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.PictureBox pbDestinos;
+        private System.Windows.Forms.PictureBox pbLogo;
+        private System.Windows.Forms.ToolStrip tlsMain;
+        private System.Windows.Forms.ToolStripButton tlsBtnAcuerdo;
+        private System.Windows.Forms.ToolStripButton tlsBtnPrecios;
+        private System.Windows.Forms.ToolStripButton tlsBtnSalir;
     }
 }
 
