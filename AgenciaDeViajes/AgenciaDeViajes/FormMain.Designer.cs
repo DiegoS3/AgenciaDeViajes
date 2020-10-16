@@ -96,7 +96,7 @@
             this.iMenuSalir});
             this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuPrincipal.Name = "menuPrincipal";
-            this.menuPrincipal.Size = new System.Drawing.Size(877, 24);
+            this.menuPrincipal.Size = new System.Drawing.Size(929, 24);
             this.menuPrincipal.TabIndex = 1;
             this.menuPrincipal.Text = "menuStrip1";
             // 
@@ -130,7 +130,7 @@
             "Playa",
             "Montaña",
             "Tour"});
-            this.lsbDestinos.Location = new System.Drawing.Point(343, 108);
+            this.lsbDestinos.Location = new System.Drawing.Point(315, 108);
             this.lsbDestinos.Name = "lsbDestinos";
             this.lsbDestinos.Size = new System.Drawing.Size(167, 95);
             this.lsbDestinos.TabIndex = 2;
@@ -140,7 +140,7 @@
             // 
             this.lblDestinos.AutoSize = true;
             this.lblDestinos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDestinos.Location = new System.Drawing.Point(343, 89);
+            this.lblDestinos.Location = new System.Drawing.Point(350, 89);
             this.lblDestinos.Name = "lblDestinos";
             this.lblDestinos.Size = new System.Drawing.Size(98, 13);
             this.lblDestinos.TabIndex = 3;
@@ -157,7 +157,7 @@
             "Lavandería",
             "NaturAventura",
             "Spa"});
-            this.clbActividades.Location = new System.Drawing.Point(650, 108);
+            this.clbActividades.Location = new System.Drawing.Point(708, 109);
             this.clbActividades.Name = "clbActividades";
             this.clbActividades.Size = new System.Drawing.Size(202, 94);
             this.clbActividades.TabIndex = 4;
@@ -166,7 +166,7 @@
             // 
             this.lblActividades.AutoSize = true;
             this.lblActividades.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActividades.Location = new System.Drawing.Point(647, 89);
+            this.lblActividades.Location = new System.Drawing.Point(756, 93);
             this.lblActividades.Name = "lblActividades";
             this.lblActividades.Size = new System.Drawing.Size(106, 13);
             this.lblActividades.TabIndex = 5;
@@ -176,7 +176,7 @@
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(343, 232);
+            this.lblFecha.Location = new System.Drawing.Point(591, 233);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(42, 13);
             this.lblFecha.TabIndex = 6;
@@ -184,7 +184,11 @@
             // 
             // mncCalendario
             // 
-            this.mncCalendario.Location = new System.Drawing.Point(346, 259);
+            this.mncCalendario.CalendarDimensions = new System.Drawing.Size(2, 1);
+            this.mncCalendario.Location = new System.Drawing.Point(423, 255);
+            this.mncCalendario.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
+            this.mncCalendario.MaxSelectionCount = 20;
+            this.mncCalendario.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.mncCalendario.Name = "mncCalendario";
             this.mncCalendario.TabIndex = 7;
             // 
@@ -237,7 +241,7 @@
             // nudPersonas
             // 
             this.nudPersonas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudPersonas.Location = new System.Drawing.Point(650, 288);
+            this.nudPersonas.Location = new System.Drawing.Point(497, 122);
             this.nudPersonas.Minimum = new decimal(new int[] {
             1,
             0,
@@ -257,7 +261,7 @@
             // 
             this.lblPersonas.AutoSize = true;
             this.lblPersonas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPersonas.Location = new System.Drawing.Point(744, 290);
+            this.lblPersonas.Location = new System.Drawing.Point(591, 124);
             this.lblPersonas.Name = "lblPersonas";
             this.lblPersonas.Size = new System.Drawing.Size(59, 13);
             this.lblPersonas.TabIndex = 10;
@@ -266,7 +270,7 @@
             // nudHotel
             // 
             this.nudHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudHotel.Location = new System.Drawing.Point(650, 354);
+            this.nudHotel.Location = new System.Drawing.Point(497, 175);
             this.nudHotel.Maximum = new decimal(new int[] {
             5,
             0,
@@ -291,7 +295,7 @@
             // 
             this.lblHotel.AutoSize = true;
             this.lblHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHotel.Location = new System.Drawing.Point(744, 354);
+            this.lblHotel.Location = new System.Drawing.Point(591, 175);
             this.lblHotel.Name = "lblHotel";
             this.lblHotel.Size = new System.Drawing.Size(108, 13);
             this.lblHotel.TabIndex = 12;
@@ -305,13 +309,13 @@
             this.pnlValidar.Controls.Add(this.textValidar);
             this.pnlValidar.Location = new System.Drawing.Point(346, 441);
             this.pnlValidar.Name = "pnlValidar";
-            this.pnlValidar.Size = new System.Drawing.Size(506, 252);
+            this.pnlValidar.Size = new System.Drawing.Size(564, 252);
             this.pnlValidar.TabIndex = 13;
             // 
             // btnValidar
             // 
             this.btnValidar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnValidar.Location = new System.Drawing.Point(416, 211);
+            this.btnValidar.Location = new System.Drawing.Point(473, 211);
             this.btnValidar.Name = "btnValidar";
             this.btnValidar.Size = new System.Drawing.Size(75, 23);
             this.btnValidar.TabIndex = 2;
@@ -333,7 +337,7 @@
             this.textValidar.Location = new System.Drawing.Point(16, 14);
             this.textValidar.Multiline = true;
             this.textValidar.Name = "textValidar";
-            this.textValidar.Size = new System.Drawing.Size(476, 180);
+            this.textValidar.Size = new System.Drawing.Size(532, 180);
             this.textValidar.TabIndex = 0;
             // 
             // stsMain
@@ -344,7 +348,7 @@
             this.lblHora});
             this.stsMain.Location = new System.Drawing.Point(0, 738);
             this.stsMain.Name = "stsMain";
-            this.stsMain.Size = new System.Drawing.Size(877, 22);
+            this.stsMain.Size = new System.Drawing.Size(929, 22);
             this.stsMain.TabIndex = 14;
             this.stsMain.Text = "statusStrip1";
             // 
@@ -399,7 +403,7 @@
             this.tlsBtnSalir});
             this.tlsMain.Location = new System.Drawing.Point(0, 24);
             this.tlsMain.Name = "tlsMain";
-            this.tlsMain.Size = new System.Drawing.Size(877, 46);
+            this.tlsMain.Size = new System.Drawing.Size(929, 46);
             this.tlsMain.TabIndex = 7;
             this.tlsMain.Text = "toolStrip1";
             // 
@@ -439,6 +443,7 @@
             this.tlsBtnSalir.Image = ((System.Drawing.Image)(resources.GetObject("tlsBtnSalir.Image")));
             this.tlsBtnSalir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tlsBtnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tlsBtnSalir.Margin = new System.Windows.Forms.Padding(0, 1, 20, 2);
             this.tlsBtnSalir.Name = "tlsBtnSalir";
             this.tlsBtnSalir.Size = new System.Drawing.Size(40, 40);
             this.tlsBtnSalir.Text = "toolStripButton3";
@@ -457,7 +462,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 760);
+            this.ClientSize = new System.Drawing.Size(929, 760);
             this.Controls.Add(this.tlsMain);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.pbDestinos);
