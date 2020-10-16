@@ -17,6 +17,7 @@ namespace AgenciaDeViajes.Splash
             InitializeComponent();
         }
 
+        //Tras pasar el tiempo indicado en el intervalo del timer mostramos el form principal y ocultamos este
         private void timSplash_Tick(object sender, EventArgs e)
         {
 
@@ -27,6 +28,7 @@ namespace AgenciaDeViajes.Splash
 
         }
 
+        //Iniciamos el timer
         private void frmSplash_Shown(object sender, EventArgs e)
         {
             timSplash.Start();

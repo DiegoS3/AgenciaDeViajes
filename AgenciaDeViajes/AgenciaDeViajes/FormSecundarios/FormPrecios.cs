@@ -27,6 +27,7 @@ namespace AgenciaDeViajes.FormSecundarios
 
         }
 
+        //Al pulsar el boton volvemos al form principal
         private void tlsBtn_Click(object sender, EventArgs e)
         {
             this.Hide();

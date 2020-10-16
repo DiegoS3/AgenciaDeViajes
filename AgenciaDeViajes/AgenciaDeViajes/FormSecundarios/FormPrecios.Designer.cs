@@ -129,9 +129,9 @@
             // 
             // textPersona
             // 
-            this.textPersona.Location = new System.Drawing.Point(503, 280);
+            this.textPersona.Location = new System.Drawing.Point(473, 312);
             this.textPersona.Name = "textPersona";
-            this.textPersona.Size = new System.Drawing.Size(141, 20);
+            this.textPersona.Size = new System.Drawing.Size(98, 20);
             this.textPersona.TabIndex = 11;
             this.textPersona.Text = "20";
             this.textPersona.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -142,7 +142,7 @@
             this.lblPersona.AutoSize = true;
             this.lblPersona.BackColor = System.Drawing.Color.White;
             this.lblPersona.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPersona.Location = new System.Drawing.Point(358, 283);
+            this.lblPersona.Location = new System.Drawing.Point(484, 283);
             this.lblPersona.Name = "lblPersona";
             this.lblPersona.Size = new System.Drawing.Size(75, 13);
             this.lblPersona.TabIndex = 4;
@@ -150,6 +150,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.textCincoEstrella);
             this.groupBox1.Controls.Add(this.textCuatroEstrella);
             this.groupBox1.Controls.Add(this.textTresEstrella);
@@ -264,6 +265,7 @@
             // 
             // grbEstancia
             // 
+            this.grbEstancia.BackColor = System.Drawing.Color.White;
             this.grbEstancia.Controls.Add(this.textCompleta);
             this.grbEstancia.Controls.Add(this.textMedia);
             this.grbEstancia.Controls.Add(this.textDormir);
@@ -339,6 +341,7 @@
             // 
             // grbDestinos
             // 
+            this.grbDestinos.BackColor = System.Drawing.Color.White;
             this.grbDestinos.Controls.Add(this.textTour);
             this.grbDestinos.Controls.Add(this.textMontain);
             this.grbDestinos.Controls.Add(this.textPlaya);

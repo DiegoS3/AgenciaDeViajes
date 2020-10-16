@@ -56,7 +56,7 @@
             this.timHoraActual = new System.Windows.Forms.Timer(this.components);
             this.stsMain = new System.Windows.Forms.StatusStrip();
             this.lblMail = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.pgbCarga = new System.Windows.Forms.ToolStripProgressBar();
             this.lblHora = new System.Windows.Forms.ToolStripStatusLabel();
             this.pbDestinos = new System.Windows.Forms.PictureBox();
             this.pbLogo = new System.Windows.Forms.PictureBox();
@@ -65,6 +65,7 @@
             this.tlsBtnPrecios = new System.Windows.Forms.ToolStripButton();
             this.tlsBtnSalir = new System.Windows.Forms.ToolStripButton();
             this.imglDestinos = new System.Windows.Forms.ImageList(this.components);
+            this.timBarraProgreso = new System.Windows.Forms.Timer(this.components);
             this.menuPrincipal.SuspendLayout();
             this.grbEstancias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPersonas)).BeginInit();
@@ -89,7 +90,7 @@
             // 
             // menuPrincipal
             // 
-            this.menuPrincipal.BackColor = System.Drawing.Color.Salmon;
+            this.menuPrincipal.BackColor = System.Drawing.SystemColors.HotTrack;
             this.menuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.iMenuAcuerdo,
             this.iMenuPrecios,
@@ -321,6 +322,7 @@
             this.btnValidar.TabIndex = 2;
             this.btnValidar.Text = "VALIDAR";
             this.btnValidar.UseVisualStyleBackColor = true;
+            this.btnValidar.Click += new System.EventHandler(this.btnValidar_Click);
             // 
             // lblPrecio
             // 
@@ -328,9 +330,8 @@
             this.lblPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrecio.Location = new System.Drawing.Point(16, 211);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(25, 13);
+            this.lblPrecio.Size = new System.Drawing.Size(0, 13);
             this.lblPrecio.TabIndex = 1;
-            this.lblPrecio.Text = "0 €";
             // 
             // textValidar
             // 
@@ -340,11 +341,15 @@
             this.textValidar.Size = new System.Drawing.Size(532, 180);
             this.textValidar.TabIndex = 0;
             // 
+            // timHoraActual
+            // 
+            this.timHoraActual.Tick += new System.EventHandler(this.timHoraActual_Tick);
+            // 
             // stsMain
             // 
             this.stsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblMail,
-            this.toolStripProgressBar1,
+            this.pgbCarga,
             this.lblHora});
             this.stsMain.Location = new System.Drawing.Point(0, 738);
             this.stsMain.Name = "stsMain";
@@ -361,19 +366,18 @@
             this.lblMail.Size = new System.Drawing.Size(158, 17);
             this.lblMail.Text = "vielcontravel@gmail.com";
             // 
-            // toolStripProgressBar1
+            // pgbCarga
             // 
-            this.toolStripProgressBar1.Margin = new System.Windows.Forms.Padding(20, 3, 1, 3);
-            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(200, 16);
+            this.pgbCarga.Margin = new System.Windows.Forms.Padding(20, 3, 1, 3);
+            this.pgbCarga.Name = "pgbCarga";
+            this.pgbCarga.Size = new System.Drawing.Size(200, 16);
             // 
             // lblHora
             // 
             this.lblHora.Image = ((System.Drawing.Image)(resources.GetObject("lblHora.Image")));
             this.lblHora.Margin = new System.Windows.Forms.Padding(200, 3, 0, 2);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(134, 17);
-            this.lblHora.Text = "toolStripStatusLabel2";
+            this.lblHora.Size = new System.Drawing.Size(16, 17);
             // 
             // pbDestinos
             // 
@@ -397,6 +401,7 @@
             // tlsMain
             // 
             this.tlsMain.AutoSize = false;
+            this.tlsMain.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.tlsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tlsBtnAcuerdo,
             this.tlsBtnPrecios,
@@ -458,6 +463,11 @@
             this.imglDestinos.Images.SetKeyName(2, "montaña.jpg");
             this.imglDestinos.Images.SetKeyName(3, "tour.jpg");
             // 
+            // timBarraProgreso
+            // 
+            this.timBarraProgreso.Enabled = true;
+            this.timBarraProgreso.Interval = 400;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -486,6 +496,7 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agencia de Viajes CIFPVG Diego";
+            this.Shown += new System.EventHandler(this.frmMain_Shown);
             this.menuPrincipal.ResumeLayout(false);
             this.menuPrincipal.PerformLayout();
             this.grbEstancias.ResumeLayout(false);
@@ -533,7 +544,7 @@
         private System.Windows.Forms.Timer timHoraActual;
         private System.Windows.Forms.StatusStrip stsMain;
         private System.Windows.Forms.ToolStripStatusLabel lblMail;
-        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
+        private System.Windows.Forms.ToolStripProgressBar pgbCarga;
         private System.Windows.Forms.ToolStripStatusLabel lblHora;
         private System.Windows.Forms.PictureBox pbDestinos;
         private System.Windows.Forms.PictureBox pbLogo;
@@ -542,6 +553,7 @@
         private System.Windows.Forms.ToolStripButton tlsBtnPrecios;
         private System.Windows.Forms.ToolStripButton tlsBtnSalir;
         private System.Windows.Forms.ImageList imglDestinos;
+        private System.Windows.Forms.Timer timBarraProgreso;
     }
 }
 

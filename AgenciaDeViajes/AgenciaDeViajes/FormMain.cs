@@ -13,7 +13,7 @@ namespace AgenciaDeViajes
 {   
     public partial class frmMain : Form
     {
-
+        //Variables
         frmPrecios precios = new frmPrecios();
         private DateTime inicial;
         private DateTime final;
@@ -24,6 +24,7 @@ namespace AgenciaDeViajes
             InitializeComponent();
         }
 
+        //Cuando se cierra la ventana, cerramos la aplicacion
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
 
@@ -31,6 +32,7 @@ namespace AgenciaDeViajes
 
         }
 
+        //Al hacer click en el item del menu nos abre un nuevo Form
         private void iMenuAcuerdo_Click(object sender, EventArgs e)
         {
 
@@ -39,6 +41,7 @@ namespace AgenciaDeViajes
 
         }
 
+        //Al hacer click en el item del menu nos abre un nuevo Form
         private void tlsBtnAcuerdo_Click(object sender, EventArgs e)
         {
 
@@ -47,27 +50,29 @@ namespace AgenciaDeViajes
 
         }
 
+        //Al hacer click en el item del menu nos abre un nuevo Form
         private void iMenuPrecios_Click(object sender, EventArgs e)
         {
             precios.ShowDialog();
         }
-
+        //Al hacer click en el item del menu nos abre un nuevo Form
         private void tlsBtnPrecios_Click(object sender, EventArgs e)
         {
             precios.ShowDialog();
         }
-
+        //Al hacer click en el item del menu nos cierra el form principal
         private void tlsBtnSalir_Click(object sender, EventArgs e)
         {
             cerrar();
 
         }
-
+        //Al hacer click en el item del menu nos cierra el form principal
         private void iMenuSalir_Click(object sender, EventArgs e)
         {
             cerrar();
         }
 
+        //Depende del item del list box seleccionado muestra una imagen u otra
         private void lsbDestinos_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -75,29 +80,30 @@ namespace AgenciaDeViajes
 
         }
 
+        //AL pulsar en el boton calcular nos muestra la informacion de compra
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            int res = 0;
-
+            
             textValidar.Text = "";
 
             if (!seleccionado())
             {
 
-                MessageBox.Show("Todos los campos deben estar completos", "Información",
+                MessageBox.Show("Se debe seleccionar Destino y Estancia", "Información",
                MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             else
             {
-
-                imprimirPrecios();
+                iniciarTimer();//iniciamos barra de progreso
+                imprimirPrecios();//mostramos precios en el text box
+                lblPrecio.Text = precioFinal().ToString() + " €";//Ponemos el precio final en el label
 
             }
 
         }
 
-
+        //Mensaje mostrado al cerrar el Form principal
         private void cerrar()
         {
             DialogResult respuesta = MessageBox.Show("¿Estas seguro que quieres salir de la aplicación?", "Advertencia",
@@ -110,12 +116,12 @@ namespace AgenciaDeViajes
 
             }
         }
-
+        //comprobamos el minimo de selecciones necesarias para calcular el precio
         private Boolean seleccionado()
         {
 
-            if (lsbDestinos.SelectedIndex > 0 && comprobarGroupBox()
-                 && clbActividades.CheckedItems.Count > 0)
+            if (lsbDestinos.SelectedIndex > 0 && comprobarGroupBox())
+                 
             {
 
                 return true;
@@ -127,17 +133,17 @@ namespace AgenciaDeViajes
             }
 
         }
-
+        //comprobamos que haya algo checkeado en el group box
         private Boolean comprobarGroupBox()
         {
 
             return rdbMediaPension.Checked || rdbDormir.Checked || rdbPensionCompleta.Checked;
 
         }
-
+        //Claculamos el precio del destino elegido
         private int precioDestino()
         {
-
+            //Segun el item seleccionado nos devuelve un precio u otro
             switch (lsbDestinos.SelectedIndex)
             {
 
@@ -164,7 +170,7 @@ namespace AgenciaDeViajes
             }
 
         }
-
+        //Calculamos el precio de la estancia elegida segun el radio button checked
         private int precioEstancia()
         {
 
@@ -186,7 +192,7 @@ namespace AgenciaDeViajes
             }
 
         }
-
+        //Calculamos el precio del hotel segun la cantidad de estrellas seleccionada
         private int precioHotel()
         {
 
@@ -218,7 +224,7 @@ namespace AgenciaDeViajes
             }
 
         }
-
+        //Calculamos el precio del total de personas seleccionadas en el numeric up down
         private int precioPersona()
         {
 
@@ -226,6 +232,7 @@ namespace AgenciaDeViajes
 
         }
 
+        //Calculamos el precio de la temporada segun el mes elegido
         private int precioTemporada(int mes)
         {
 
@@ -252,6 +259,7 @@ namespace AgenciaDeViajes
 
         }
 
+        //Calculamos el total de dias seleccionados
         private int difDias()
         {
             inicial = mncCalendario.SelectionStart;
@@ -261,10 +269,12 @@ namespace AgenciaDeViajes
             return dif.Days + 1;
         }
 
+        //Calculamos el precio final de los dias seleccionados
         private int precioDias()
         {            
             precio = 0;
 
+            //recorremos el total de dias comprobando el mes del dia y sumando el precio de esa temporada
             for (int i = 0; i < difDias(); i++)
             {
 
@@ -276,13 +286,16 @@ namespace AgenciaDeViajes
 
         }
 
+        //Calculamos el precio de las actividades seleccionadas
         private int precioActividad()
         {
 
             precio = 0;
             int act = 0;
 
+            //recorremos la check list comprobando que actividades han sido seleccionadas
             foreach(int i in clbActividades.CheckedIndices) { 
+                //segun el indice de la actividad seleccionada entramos en un caso u otro
                 switch (i)
                 {
 
@@ -316,7 +329,7 @@ namespace AgenciaDeViajes
                         act = 0;
                         break;
                 }
-
+                //sumamos el precio de cada actividad al precio final
                 precio += act;
             }
 
@@ -324,6 +337,7 @@ namespace AgenciaDeViajes
 
         }
 
+        //Obtenemos el nombre de la estancia que ha seleccionado el usuario para posteriormente imprimirlo
         private string nombreEstancia()
         {
 
@@ -346,31 +360,99 @@ namespace AgenciaDeViajes
             }
 
         }
-
+        //Imprimimos en un Text Box los datos seleccionados y los precios
         private void imprimirPrecios()
         {
-
-            int cont = 0;
-
+            
             textValidar.AppendText("Destino " + lsbDestinos.SelectedItem.ToString() + " tiene un precio de " + precioDestino() + "€\r\n");
             textValidar.AppendText("Hotel de " + nudHotel.Value + " estrellas tiene un precio de " + precioHotel() + "€\r\n");
             textValidar.AppendText("Total de personas " + nudPersonas.Value + " tiene un precio de " + precioPersona() + "€\r\n");
             textValidar.AppendText("Tipo de estancia " + nombreEstancia() + " tiene un precio de " + precioEstancia() + "€\r\n");
             textValidar.AppendText("Total de personas " + nudPersonas.Value + " tiene un precio de " + precioPersona() + "€\r\n");
             textValidar.AppendText("Total de dias " + difDias() + " tiene un precio de " + precioDias() + "€\r\n");
+            imprimirActi();            
+
+        }
+        //Imprimimos las actividades que ha seleccionado, tanto nombre como precio total
+        private void imprimirActi()
+        {
             textValidar.AppendText("Actividad seleccionadas ");
-            foreach (int i in clbActividades.CheckedIndices)
+            if (clbActividades.CheckedItems.Count > 0)
             {
 
-                textValidar.AppendText(clbActividades.CheckedItems[i].ToString() + ", ");
+                foreach (int i in clbActividades.CheckedIndices)
+                {
+                    try
+                    {
+                        textValidar.AppendText(clbActividades.CheckedItems[i].ToString() + ", ");
+                    }
+                    catch (Exception e) { }
 
-                cont++;
+                }
+                textValidar.AppendText("las activdidades seleccionadas tienen un precio de " + precioActividad() + "€");
+
             }
-            textValidar.AppendText("las activdidades seleccionadas tienen un precio de " + precioActividad() + "€");
+            else
+            {
+
+                textValidar.AppendText("Ninguna Actividad Seleccionada ");
+
+            }
+
+        }
+        //Calculo del precio final 
+        private int precioFinal()
+        {
+
+            return precioEstancia() + precioDestino() + precioPersona() + precioHotel() + precioDias() + precioActividad();
 
         }
 
+        //Iniciamos el timer de la barra de progreso
+        private void iniciarTimer()
+        {
 
+            timBarraProgreso.Tick += new EventHandler(incrementarBarra);
+            timBarraProgreso.Start();
+
+        }
+        //Metodo que incrementa la barra de progreso con el avance del timer
+        private void incrementarBarra(object sender, EventArgs e)
+        {
+
+            pgbCarga.Increment(1);
+
+            //comprobamos si el valor de la progress bar es el maximo y lo ponemos a 0
+            if (pgbCarga.Value == pgbCarga.Maximum)
+            {
+
+                pgbCarga.Value = 0;
+
+            }
+
+        }
+        //Al pulsar el boton de validad para el timer y muestra un mensaje emergente de compra realizada
+        private void btnValidar_Click(object sender, EventArgs e)
+        {
+
+            timBarraProgreso.Stop();
+            pgbCarga.Value = 100;
+            MessageBox.Show("Compra realizada con exito", "Información",
+               MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+        }
+
+        //Iniciamos el timer de la hora cuando el Form aparece
+        private void frmMain_Shown(object sender, EventArgs e)
+        {
+            timHoraActual.Start();
+        }
+        //Metodo que actualiza la hora cada segundo
+        private void timHoraActual_Tick(object sender, EventArgs e)
+        {
+            lblHora.Text =  DateTime.Now.ToString("hh:mm:ss");
+        }
     }
     
 }
