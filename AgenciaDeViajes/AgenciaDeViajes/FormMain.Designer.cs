@@ -104,18 +104,21 @@
             this.iMenuAcuerdo.Name = "iMenuAcuerdo";
             this.iMenuAcuerdo.Size = new System.Drawing.Size(112, 20);
             this.iMenuAcuerdo.Text = "Acuerdo Empresa";
+            this.iMenuAcuerdo.Click += new System.EventHandler(this.iMenuAcuerdo_Click);
             // 
             // iMenuPrecios
             // 
             this.iMenuPrecios.Name = "iMenuPrecios";
             this.iMenuPrecios.Size = new System.Drawing.Size(57, 20);
             this.iMenuPrecios.Text = "Precios";
+            this.iMenuPrecios.Click += new System.EventHandler(this.iMenuPrecios_Click);
             // 
             // iMenuSalir
             // 
             this.iMenuSalir.Name = "iMenuSalir";
             this.iMenuSalir.Size = new System.Drawing.Size(41, 20);
             this.iMenuSalir.Text = "Salir";
+            this.iMenuSalir.Click += new System.EventHandler(this.iMenuSalir_Click);
             // 
             // lsbDestinos
             // 
@@ -393,6 +396,7 @@
             this.tlsBtnAcuerdo.Size = new System.Drawing.Size(40, 40);
             this.tlsBtnAcuerdo.Text = "toolStripButton1";
             this.tlsBtnAcuerdo.ToolTipText = "Acuerdo Empresa";
+            this.tlsBtnAcuerdo.Click += new System.EventHandler(this.tlsBtnAcuerdo_Click);
             // 
             // tlsBtnPrecios
             // 
@@ -406,6 +410,7 @@
             this.tlsBtnPrecios.Size = new System.Drawing.Size(40, 40);
             this.tlsBtnPrecios.Text = "toolStripButton2";
             this.tlsBtnPrecios.ToolTipText = "Precios";
+            this.tlsBtnPrecios.Click += new System.EventHandler(this.tlsBtnPrecios_Click);
             // 
             // tlsBtnSalir
             // 
@@ -418,6 +423,7 @@
             this.tlsBtnSalir.Name = "tlsBtnSalir";
             this.tlsBtnSalir.Size = new System.Drawing.Size(40, 40);
             this.tlsBtnSalir.Text = "toolStripButton3";
+            this.tlsBtnSalir.Click += new System.EventHandler(this.tlsBtnSalir_Click);
             // 
             // frmMain
             // 
