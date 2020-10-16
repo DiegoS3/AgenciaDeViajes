@@ -79,11 +79,19 @@ namespace AgenciaDeViajes
         {
             int res = 0;
 
+            textValidar.Text = "";
+
             if (!seleccionado())
             {
 
                 MessageBox.Show("Todos los campos deben estar completos", "Información",
                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else
+            {
+
+                imprimirPrecios();
 
             }
 
@@ -107,7 +115,7 @@ namespace AgenciaDeViajes
         {
 
             if (lsbDestinos.SelectedIndex > 0 && comprobarGroupBox()
-                 && clbActividades.SelectedItems.Count > 0)
+                 && clbActividades.CheckedItems.Count > 0)
             {
 
                 return true;
@@ -135,19 +143,19 @@ namespace AgenciaDeViajes
 
                 case 0:
 
-                    return precios.destinos[0];
+                    return int.Parse(precios.textCiudad.Text);
 
                 case 1:
 
-                    return precios.destinos[1];                    
+                    return int.Parse(precios.textPlaya.Text);                    
 
                 case 2:
 
-                    return precios.destinos[2];                    
+                    return int.Parse(precios.textMontain.Text);                    
 
                 case 3:
 
-                    return precios.destinos[3];
+                    return int.Parse(precios.textTour.Text);
 
                 default:
 
@@ -163,17 +171,17 @@ namespace AgenciaDeViajes
             if (rdbDormir.Checked) 
             {
 
-                return precios.estancia[0];
+                return int.Parse(precios.textDormir.Text);
 
             }else if (rdbMediaPension.Checked)
             {
 
-                return precios.estancia[1];
+                return int.Parse(precios.textMedia.Text);
             }
             else
             {
 
-                return precios.estancia[2];
+                return int.Parse(precios.textCompleta.Text);
 
             }
 
@@ -186,23 +194,23 @@ namespace AgenciaDeViajes
             {
                     case 1:
 
-                    return precios.estrellas[0];
+                    return int.Parse(precios.textUnaEstrella.Text);
 
                     case 2:
 
-                    return precios.estrellas[1];
+                    return int.Parse(precios.textDosEstrella.Text);
 
                     case 3:
 
-                    return precios.estrellas[2];
+                    return int.Parse(precios.textTresEstrella.Text);
 
                     case 4:
 
-                    return precios.estrellas[3];
+                    return int.Parse(precios.textCuatroEstrella.Text);
 
                     case 5:
 
-                    return precios.estrellas[4];
+                    return int.Parse(precios.textCincoEstrella.Text);
 
                     default:
 
@@ -214,7 +222,7 @@ namespace AgenciaDeViajes
         private int precioPersona()
         {
 
-            return (((int)nudPersonas.Value) * precios.persona);
+            return (((int)nudPersonas.Value) * (int.Parse(precios.textPersona.Text)));
 
         }
 
@@ -226,15 +234,15 @@ namespace AgenciaDeViajes
 
                 case 7: case 8:
 
-                    return precios.fechas[0];
+                    return int.Parse(precios.textAlta.Text);
 
                 case 1: case 9: case 10: case 11: case 12:
 
-                    return precios.fechas[1];
+                    return int.Parse(precios.textMediaTem.Text);
 
                 case 2: case 3: case 4: case 5: case 6:
 
-                    return precios.fechas[2];
+                    return int.Parse(precios.textBaja.Text);
 
                 default:
 
@@ -272,40 +280,44 @@ namespace AgenciaDeViajes
         {
 
             precio = 0;
-            int cont = clbActividades.SelectedItems.Count;
+            int act = 0;
 
-            while (cont > 0) {
-
-                switch (clbActividades.SelectedIndex)
+            foreach(int i in clbActividades.CheckedIndices) { 
+                switch (i)
                 {
 
                     case 0:
 
-                        precio += precios.actividades[0];
+                        act = int.Parse(precios.textCena.Text);
                         break;
 
                     case 1:
 
-                        precio += precios.actividades[1];
+                        act = int.Parse(precios.textExcursion.Text);
                         break;
 
                     case 2:
 
-                        precio += precios.actividades[2];
+                        act = int.Parse(precios.textLavanderia.Text);
                         break;
 
                     case 3:
 
-                        precio += precios.actividades[3];
+                        act = int.Parse(precios.textNaturAventura.Text);
                         break;
 
                     case 4:
 
-                        precio += precios.actividades[4];
+                        act = int.Parse(precios.textSpa.Text);
+                        break;
+
+                    default:
+
+                        act = 0;
                         break;
                 }
 
-                cont--;
+                precio += act;
             }
 
             return precio;
@@ -340,19 +352,21 @@ namespace AgenciaDeViajes
 
             int cont = 0;
 
-            textValidar.AppendText("Destino " + lsbDestinos.SelectedItem.ToString() + " tiene un precio de " + precioDestino() + "€\n");
-            textValidar.AppendText("Hotel de " + nudHotel.Value + " tiene un precio de " + precioHotel() + "€\n");
-            textValidar.AppendText("Total de personas " + nudPersonas.Value + " tiene un precio de " + precioPersona() + "€\n");
-            textValidar.AppendText("Tipo de estancia " + nombreEstancia() + " tiene un precio de " + precioEstancia() + "€\n");
-            textValidar.AppendText("Total de personas " + nudPersonas.Value + " tiene un precio de " + precioPersona() + "€\n");
-            while (cont < clbActividades.SelectedItems.Count)
+            textValidar.AppendText("Destino " + lsbDestinos.SelectedItem.ToString() + " tiene un precio de " + precioDestino() + "€\r\n");
+            textValidar.AppendText("Hotel de " + nudHotel.Value + " estrellas tiene un precio de " + precioHotel() + "€\r\n");
+            textValidar.AppendText("Total de personas " + nudPersonas.Value + " tiene un precio de " + precioPersona() + "€\r\n");
+            textValidar.AppendText("Tipo de estancia " + nombreEstancia() + " tiene un precio de " + precioEstancia() + "€\r\n");
+            textValidar.AppendText("Total de personas " + nudPersonas.Value + " tiene un precio de " + precioPersona() + "€\r\n");
+            textValidar.AppendText("Total de dias " + difDias() + " tiene un precio de " + precioDias() + "€\r\n");
+            textValidar.AppendText("Actividad seleccionadas ");
+            foreach (int i in clbActividades.CheckedIndices)
             {
 
-                textValidar.AppendText("Actividad seleccionadas " + clbActividades.SelectedItems[cont].ToString() + ", ");
+                textValidar.AppendText(clbActividades.CheckedItems[i].ToString() + ", ");
 
                 cont++;
             }
-            textValidar.AppendText("Las activdidades seleccionadas tienen un precio de " + precioActividad() + "€");
+            textValidar.AppendText("las activdidades seleccionadas tienen un precio de " + precioActividad() + "€");
 
         }
 

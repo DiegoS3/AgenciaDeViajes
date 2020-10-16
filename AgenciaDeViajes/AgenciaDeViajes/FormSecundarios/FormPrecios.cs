@@ -13,12 +13,12 @@ namespace AgenciaDeViajes.FormSecundarios
     public partial class frmPrecios : Form
     {
         //Variables
-        public int[] destinos = new int[4];
-        public int[] estancia = new int[3];
-        public int[] estrellas = new int[5];
-        public int persona;
-        public int[] actividades = new int[5];
-        public int[] fechas = new int[3];
+        private int[] destinos = new int[4];
+        private int[] estancia = new int[3];
+        private int[] estrellas = new int[5];
+        private int persona;
+        private int[] actividades = new int[5];
+        private int[] fechas = new int[3];
         private int num;
 
         public frmPrecios()
