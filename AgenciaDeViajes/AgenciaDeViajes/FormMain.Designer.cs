@@ -52,9 +52,8 @@
             this.pnlValidar = new System.Windows.Forms.Panel();
             this.btnValidar = new System.Windows.Forms.Button();
             this.lblPrecio = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textValidar = new System.Windows.Forms.TextBox();
             this.timHoraActual = new System.Windows.Forms.Timer(this.components);
-            this.imgDestinos = new System.Windows.Forms.ImageList(this.components);
             this.stsMain = new System.Windows.Forms.StatusStrip();
             this.lblMail = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
@@ -65,6 +64,7 @@
             this.tlsBtnAcuerdo = new System.Windows.Forms.ToolStripButton();
             this.tlsBtnPrecios = new System.Windows.Forms.ToolStripButton();
             this.tlsBtnSalir = new System.Windows.Forms.ToolStripButton();
+            this.imglDestinos = new System.Windows.Forms.ImageList(this.components);
             this.menuPrincipal.SuspendLayout();
             this.grbEstancias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPersonas)).BeginInit();
@@ -85,6 +85,7 @@
             this.btnCalcular.TabIndex = 0;
             this.btnCalcular.Text = "CALCULAR";
             this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // menuPrincipal
             // 
@@ -133,6 +134,7 @@
             this.lsbDestinos.Name = "lsbDestinos";
             this.lsbDestinos.Size = new System.Drawing.Size(167, 95);
             this.lsbDestinos.TabIndex = 2;
+            this.lsbDestinos.SelectedIndexChanged += new System.EventHandler(this.lsbDestinos_SelectedIndexChanged);
             // 
             // lblDestinos
             // 
@@ -146,6 +148,7 @@
             // 
             // clbActividades
             // 
+            this.clbActividades.CheckOnClick = true;
             this.clbActividades.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clbActividades.FormattingEnabled = true;
             this.clbActividades.Items.AddRange(new object[] {
@@ -235,10 +238,20 @@
             // 
             this.nudPersonas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudPersonas.Location = new System.Drawing.Point(650, 288);
+            this.nudPersonas.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudPersonas.Name = "nudPersonas";
             this.nudPersonas.Size = new System.Drawing.Size(75, 20);
             this.nudPersonas.TabIndex = 9;
             this.nudPersonas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudPersonas.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // lblPersonas
             // 
@@ -254,10 +267,25 @@
             // 
             this.nudHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudHotel.Location = new System.Drawing.Point(650, 354);
+            this.nudHotel.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.nudHotel.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudHotel.Name = "nudHotel";
             this.nudHotel.Size = new System.Drawing.Size(75, 20);
             this.nudHotel.TabIndex = 11;
             this.nudHotel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudHotel.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // lblHotel
             // 
@@ -274,7 +302,7 @@
             this.pnlValidar.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.pnlValidar.Controls.Add(this.btnValidar);
             this.pnlValidar.Controls.Add(this.lblPrecio);
-            this.pnlValidar.Controls.Add(this.textBox1);
+            this.pnlValidar.Controls.Add(this.textValidar);
             this.pnlValidar.Location = new System.Drawing.Point(346, 441);
             this.pnlValidar.Name = "pnlValidar";
             this.pnlValidar.Size = new System.Drawing.Size(506, 252);
@@ -300,22 +328,13 @@
             this.lblPrecio.TabIndex = 1;
             this.lblPrecio.Text = "0 €";
             // 
-            // textBox1
+            // textValidar
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 14);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(476, 180);
-            this.textBox1.TabIndex = 0;
-            // 
-            // imgDestinos
-            // 
-            this.imgDestinos.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgDestinos.ImageStream")));
-            this.imgDestinos.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgDestinos.Images.SetKeyName(0, "ciudad.jpg");
-            this.imgDestinos.Images.SetKeyName(1, "playa.jpg");
-            this.imgDestinos.Images.SetKeyName(2, "montaña.jpg");
-            this.imgDestinos.Images.SetKeyName(3, "tour.jpg");
+            this.textValidar.Location = new System.Drawing.Point(16, 14);
+            this.textValidar.Multiline = true;
+            this.textValidar.Name = "textValidar";
+            this.textValidar.Size = new System.Drawing.Size(476, 180);
+            this.textValidar.TabIndex = 0;
             // 
             // stsMain
             // 
@@ -425,6 +444,15 @@
             this.tlsBtnSalir.Text = "toolStripButton3";
             this.tlsBtnSalir.Click += new System.EventHandler(this.tlsBtnSalir_Click);
             // 
+            // imglDestinos
+            // 
+            this.imglDestinos.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imglDestinos.ImageStream")));
+            this.imglDestinos.TransparentColor = System.Drawing.Color.Transparent;
+            this.imglDestinos.Images.SetKeyName(0, "ciudad.jpg");
+            this.imglDestinos.Images.SetKeyName(1, "playa.jpg");
+            this.imglDestinos.Images.SetKeyName(2, "montaña.jpg");
+            this.imglDestinos.Images.SetKeyName(3, "tour.jpg");
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -496,9 +524,8 @@
         private System.Windows.Forms.Panel pnlValidar;
         private System.Windows.Forms.Button btnValidar;
         private System.Windows.Forms.Label lblPrecio;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textValidar;
         private System.Windows.Forms.Timer timHoraActual;
-        private System.Windows.Forms.ImageList imgDestinos;
         private System.Windows.Forms.StatusStrip stsMain;
         private System.Windows.Forms.ToolStripStatusLabel lblMail;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
@@ -509,6 +536,7 @@
         private System.Windows.Forms.ToolStripButton tlsBtnAcuerdo;
         private System.Windows.Forms.ToolStripButton tlsBtnPrecios;
         private System.Windows.Forms.ToolStripButton tlsBtnSalir;
+        private System.Windows.Forms.ImageList imglDestinos;
     }
 }
 

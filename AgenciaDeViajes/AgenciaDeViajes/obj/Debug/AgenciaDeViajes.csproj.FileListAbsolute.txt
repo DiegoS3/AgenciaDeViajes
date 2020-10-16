@@ -3,6 +3,11 @@ D:\Users\diego\Desktop\REPO\AgenciaDeViajes\AgenciaDeViajes\obj\Debug\AgenciaDeV
 D:\Users\diego\Desktop\REPO\AgenciaDeViajes\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.FormSecundarios.frmAcuerdo.resources
 D:\Users\diego\Desktop\REPO\AgenciaDeViajes\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.FormSecundarios.frmPrecios.resources
 D:\Users\diego\Desktop\REPO\AgenciaDeViajes\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.Properties.Resources.resources
-D:\Users\diego\Desktop\REPO\AgenciaDeViajes\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.SplashScreen.resources
 D:\Users\diego\Desktop\REPO\AgenciaDeViajes\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.csproj.GenerateResource.cache
 D:\Users\diego\Desktop\REPO\AgenciaDeViajes\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.csproj.CoreCompileInputs.cache
+D:\Users\diego\Desktop\REPO\AgenciaDeViajes\AgenciaDeViajes\bin\Debug\AgenciaDeViajes.exe.config
+D:\Users\diego\Desktop\REPO\AgenciaDeViajes\AgenciaDeViajes\bin\Debug\AgenciaDeViajes.exe
+D:\Users\diego\Desktop\REPO\AgenciaDeViajes\AgenciaDeViajes\bin\Debug\AgenciaDeViajes.pdb
+D:\Users\diego\Desktop\REPO\AgenciaDeViajes\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.Splash.frmSplash.resources
+D:\Users\diego\Desktop\REPO\AgenciaDeViajes\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.exe
+D:\Users\diego\Desktop\REPO\AgenciaDeViajes\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.pdb

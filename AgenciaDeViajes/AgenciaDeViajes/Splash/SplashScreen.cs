@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AgenciaDeViajes
+namespace AgenciaDeViajes.Splash
 {
-    public partial class SplashScreen : Form
+    public partial class frmSplash : Form
     {
-        public SplashScreen()
+        public frmSplash()
         {
             InitializeComponent();
         }
@@ -21,17 +21,15 @@ namespace AgenciaDeViajes
         {
 
             timSplash.Stop();
-            frmMain mainForm = new frmMain();
-            mainForm.Show();
+            frmMain main = new frmMain();
+            main.Show();
             this.Hide();
 
         }
 
-        private void SplashScreen_Shown(object sender, EventArgs e)
+        private void frmSplash_Shown(object sender, EventArgs e)
         {
-
             timSplash.Start();
-
         }
     }
 }
