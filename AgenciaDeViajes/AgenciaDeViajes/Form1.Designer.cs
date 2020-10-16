@@ -50,21 +50,26 @@
             this.nudHotel = new System.Windows.Forms.NumericUpDown();
             this.lblHotel = new System.Windows.Forms.Label();
             this.pnlValidar = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblPrecio = new System.Windows.Forms.Label();
             this.btnValidar = new System.Windows.Forms.Button();
-            this.pnlBajo = new System.Windows.Forms.Panel();
-            this.lLblMail = new System.Windows.Forms.LinkLabel();
-            this.pgbCarga = new System.Windows.Forms.ProgressBar();
-            this.lblHora = new System.Windows.Forms.Label();
+            this.lblPrecio = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.timHoraActual = new System.Windows.Forms.Timer(this.components);
             this.imgDestinos = new System.Windows.Forms.ImageList(this.components);
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblMail = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.lblHora = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.menuPrincipal.SuspendLayout();
             this.grbEstancias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPersonas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHotel)).BeginInit();
             this.pnlValidar.SuspendLayout();
-            this.pnlBajo.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCalcular
@@ -268,13 +273,15 @@
             this.pnlValidar.Size = new System.Drawing.Size(506, 252);
             this.pnlValidar.TabIndex = 13;
             // 
-            // textBox1
+            // btnValidar
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 14);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(476, 180);
-            this.textBox1.TabIndex = 0;
+            this.btnValidar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValidar.Location = new System.Drawing.Point(416, 211);
+            this.btnValidar.Name = "btnValidar";
+            this.btnValidar.Size = new System.Drawing.Size(75, 23);
+            this.btnValidar.TabIndex = 2;
+            this.btnValidar.Text = "VALIDAR";
+            this.btnValidar.UseVisualStyleBackColor = true;
             // 
             // lblPrecio
             // 
@@ -286,52 +293,13 @@
             this.lblPrecio.TabIndex = 1;
             this.lblPrecio.Text = "0 €";
             // 
-            // btnValidar
+            // textBox1
             // 
-            this.btnValidar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnValidar.Location = new System.Drawing.Point(416, 211);
-            this.btnValidar.Name = "btnValidar";
-            this.btnValidar.Size = new System.Drawing.Size(75, 23);
-            this.btnValidar.TabIndex = 2;
-            this.btnValidar.Text = "VALIDAR";
-            this.btnValidar.UseVisualStyleBackColor = true;
-            // 
-            // pnlBajo
-            // 
-            this.pnlBajo.BackColor = System.Drawing.SystemColors.Highlight;
-            this.pnlBajo.Controls.Add(this.lblHora);
-            this.pnlBajo.Controls.Add(this.pgbCarga);
-            this.pnlBajo.Controls.Add(this.lLblMail);
-            this.pnlBajo.Location = new System.Drawing.Point(0, 733);
-            this.pnlBajo.Name = "pnlBajo";
-            this.pnlBajo.Size = new System.Drawing.Size(877, 27);
-            this.pnlBajo.TabIndex = 14;
-            // 
-            // lLblMail
-            // 
-            this.lLblMail.AutoSize = true;
-            this.lLblMail.Location = new System.Drawing.Point(41, 8);
-            this.lLblMail.Name = "lLblMail";
-            this.lLblMail.Size = new System.Drawing.Size(125, 13);
-            this.lLblMail.TabIndex = 0;
-            this.lLblMail.TabStop = true;
-            this.lLblMail.Text = "vielcontravel@gmail.com";
-            // 
-            // pgbCarga
-            // 
-            this.pgbCarga.Location = new System.Drawing.Point(173, 3);
-            this.pgbCarga.Name = "pgbCarga";
-            this.pgbCarga.Size = new System.Drawing.Size(292, 21);
-            this.pgbCarga.TabIndex = 1;
-            // 
-            // lblHora
-            // 
-            this.lblHora.AutoSize = true;
-            this.lblHora.Location = new System.Drawing.Point(681, 8);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(35, 13);
-            this.lblHora.TabIndex = 2;
-            this.lblHora.Text = "label1";
+            this.textBox1.Location = new System.Drawing.Point(16, 14);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(476, 180);
+            this.textBox1.TabIndex = 0;
             // 
             // imgDestinos
             // 
@@ -342,12 +310,84 @@
             this.imgDestinos.Images.SetKeyName(2, "montaña.jpg");
             this.imgDestinos.Images.SetKeyName(3, "tour.jpg");
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblMail,
+            this.toolStripProgressBar1,
+            this.lblHora});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 738);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(877, 22);
+            this.statusStrip1.TabIndex = 14;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblMail
+            // 
+            this.lblMail.IsLink = true;
+            this.lblMail.Name = "lblMail";
+            this.lblMail.Size = new System.Drawing.Size(142, 17);
+            this.lblMail.Text = "vielcontravel@gmail.com";
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Margin = new System.Windows.Forms.Padding(20, 3, 1, 3);
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(200, 16);
+            // 
+            // lblHora
+            // 
+            this.lblHora.Margin = new System.Windows.Forms.Padding(200, 3, 0, 2);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(118, 17);
+            this.lblHora.Text = "toolStripStatusLabel2";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripButton2,
+            this.toolStripButton3});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(877, 25);
+            this.toolStrip1.TabIndex = 15;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton2.Text = "toolStripButton2";
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton3.Text = "toolStripButton3";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 760);
-            this.Controls.Add(this.pnlBajo);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.pnlValidar);
             this.Controls.Add(this.lblHotel);
             this.Controls.Add(this.nudHotel);
@@ -362,8 +402,10 @@
             this.Controls.Add(this.lsbDestinos);
             this.Controls.Add(this.btnCalcular);
             this.Controls.Add(this.menuPrincipal);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuPrincipal;
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agencia de Viajes CIFPVG Diego";
             this.menuPrincipal.ResumeLayout(false);
             this.menuPrincipal.PerformLayout();
@@ -373,8 +415,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudHotel)).EndInit();
             this.pnlValidar.ResumeLayout(false);
             this.pnlValidar.PerformLayout();
-            this.pnlBajo.ResumeLayout(false);
-            this.pnlBajo.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -405,12 +449,16 @@
         private System.Windows.Forms.Button btnValidar;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Panel pnlBajo;
-        private System.Windows.Forms.Label lblHora;
-        private System.Windows.Forms.ProgressBar pgbCarga;
-        private System.Windows.Forms.LinkLabel lLblMail;
         private System.Windows.Forms.Timer timHoraActual;
         private System.Windows.Forms.ImageList imgDestinos;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lblMail;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
+        private System.Windows.Forms.ToolStripStatusLabel lblHora;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
     }
 }
 
